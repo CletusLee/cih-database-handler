@@ -51,16 +51,6 @@ public class EmployeeKinesisStreamHandler implements RequestHandler<KinesisEvent
 			e.printStackTrace();
 		}
 
-		//---------------------
-		try {
-			List<Employee> employeeList = employeeDao.queryForAll();
-			logger.log("found how many records? " + employeeList.size());
-			logger.log("first name is: " + employeeList.get(0).getName());
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		//---------------------
-
 		try {
 			connectionSource.close();
 		} catch (IOException e) {
